@@ -188,15 +188,7 @@ def player_numbers(team)
     end
   return array
 end
-=end
 
-def player_numbers(team)
-   game_hash.values.each do |team_data|
-    if team_data.has_value?(team)
-      return team_data[:players].collect { |player| player[:number] }
-    end
-  end
-end
 
 def player_stats(name)
   game_hash.each do |location, data|
@@ -207,6 +199,18 @@ def player_stats(name)
     end
   end
 end
+=end
+
+def player_stats(player_name)
+   game_hash.values.each do |team_info|
+    team_info[:players].each do |player|
+      if player.has_value?(player_name)
+         player.delete(:player_name) 
+         return player
+      end
+    end
+  end
+ end
 
 def big_shoe_rebounds
    shoe_size = 0
