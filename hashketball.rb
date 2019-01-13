@@ -159,6 +159,7 @@ def team_colors(team)
   end
 end
 
+=begin
 def team_names
   array = []
   game_hash.each do |location, data|
@@ -170,6 +171,7 @@ def team_names
   end
   return array
 end
+=end
 
 def player_numbers(team)
   array = []
