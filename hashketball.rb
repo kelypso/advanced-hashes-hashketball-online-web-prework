@@ -170,7 +170,7 @@ def team_names
   end
   return array
 end
-
+=begin
 def player_numbers(team)
   array = []
   game_hash.each do |location, data| #location
@@ -187,6 +187,15 @@ def player_numbers(team)
      end
     end
   return array
+end
+=end
+
+def player_numbers(team)
+   game_hash.values.each do |team_info|
+    if team_info.has_value?(team)
+      return team_info[:players].map { |player| player[:number]}
+    end
+  end
 end
 
 def player_stats(name)
