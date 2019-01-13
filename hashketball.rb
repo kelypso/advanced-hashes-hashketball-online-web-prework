@@ -199,7 +199,7 @@ def player_numbers(team)
           if data == :number
           data.each do |key, stat|
             return stat.collect do |name, number|
-            data[:number]
+            key[:number]
             end
           end
         end
