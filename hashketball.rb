@@ -176,7 +176,8 @@ def player_numbers(team)
   game_hash.each do |location, data| #location
     data.each do |attribute, values| #team
         if attribute == team
-          values[:players].each do |key, stat| #player stats
+          values.each do |name, data| #player
+            data.each do |key, stat| #player stats
               if key == :number
               array << stat
               end
@@ -190,9 +191,9 @@ end
 
 def player_stats(name)
   game_hash.each do |location, data|
-    data[:players].each do |player, stat|
+    data[:players].each do |player, value|
         if player == name
-        return stat #How to convert shoe size into an integer when it's returned?
+        return value #How to convert shoe size into an integer when it's returned?
       end
     end
   end
