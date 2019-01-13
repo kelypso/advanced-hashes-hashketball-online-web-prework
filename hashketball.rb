@@ -192,13 +192,13 @@ end
 =end
 
 def player_numbers(team)
-  player_numbers_list = []
+  array = []
   game_hash.each do |location, data|
     if data[:team_name] == team
       data[:players].each do |name|
-        player.each do |key, value|
+        name.each do |key, value|
           if key == :number 
-            player_numbers_list << value
+            array << value
           end
         end
       end
