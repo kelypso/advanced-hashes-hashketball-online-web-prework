@@ -204,7 +204,7 @@ def player_numbers(team)
       end
     end
   end
-  player_numbers_list
+  array
 end
 
 
