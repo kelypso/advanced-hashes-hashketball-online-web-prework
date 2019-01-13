@@ -192,7 +192,7 @@ end
 =end
 
 
-
+=begin
 def player_stats(player)
   game_hash.each do |location, data| #location level
     data.each do |attribute, values| #team level
@@ -210,6 +210,7 @@ def player_stats(player)
     end
   end
 end
+=end
 
 def player_stats(name)
   game_hash.each do |location, data|
