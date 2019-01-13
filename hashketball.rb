@@ -200,6 +200,7 @@ def player_numbers(team)
           data.each do |key, stat|
             return stat.collect do |name, number|
             key[:number]
+          end
             end
           end
         end
