@@ -214,8 +214,8 @@ end
 
 def player_stats(name)
   game_hash.each do |location, data|
-    data[:players].each do |name, value|
-        if name == name
+    data[:players].each do |player, value|
+        if player == name
         return value
       end
     end
