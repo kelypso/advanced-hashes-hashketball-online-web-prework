@@ -191,23 +191,7 @@ def player_numbers(team)
 end
 =end
 
-def player_numbers(team)
-  game_hash.each do |location, data|
-    if team == :team_name
-      data.each do |attribute, values|
-        values.each do |name, data|
-          if data == :number
-          data.each do |key, stat|
-            return stat.collect do |name, number|
-            key[:number]
-          end
-            end
-          end
-        end
-      end
-    end
-  end
-end
+
 
 
 def player_stats(player)
