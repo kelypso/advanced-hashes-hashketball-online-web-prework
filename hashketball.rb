@@ -201,14 +201,23 @@ def player_stats(name)
 end
 =end
 
+
+def format(hash)
+  output = Hash.new
+  hash.each do |key, value|
+    output[key] = cleanup(value)
+  end
+  output
+end
+
 def big_shoe_rebounds
   biggest_shoe = 0
-  player_rebounds = 0
+  player_rebounds = {}
   game_hash.values.each do |team_info|
     team_info[:players].each do |player|
       if player[:shoe] > biggest_shoe
         biggest_shoe = player[:shoe] 
-        player_rebounds = player[:rebounds] 
+        player_rebounds << player[:rebounds] 
       end
     end
   end
