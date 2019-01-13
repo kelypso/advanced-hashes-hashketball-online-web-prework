@@ -171,14 +171,12 @@ def team_names
   return array
 end
 
-=begin
 def player_numbers(team)
   array = []
   game_hash.each do |location, data| #location
     data.each do |attribute, values| #team
         if attribute == team
-          values.each do |name, data| #player
-            data.each do |key, stat| #player stats
+          values[:players].each do |player, stat| #player stats
               if key == :number
               array << stat
               end
@@ -189,14 +187,12 @@ def player_numbers(team)
     end
   return array
 end
-=end
-
 
 def player_stats(name)
   game_hash.each do |location, data|
-    data[:players].each do |player, value|
+    data[:players].each do |player, stat|
         if player == name
-        return value #How to convert shoe size into an integer when it's returned?
+        return stat #How to convert shoe size into an integer when it's returned?
       end
     end
   end
