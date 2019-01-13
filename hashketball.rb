@@ -176,7 +176,7 @@ def player_numbers(team)
   game_hash.each do |location, data| #location
     data.each do |attribute, values| #team
         if attribute == team
-          values[:players].each do |player, stat| #player stats
+          values[:players].each do |key, stat| #player stats
               if key == :number
               array << stat
               end
