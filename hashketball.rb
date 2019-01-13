@@ -189,6 +189,17 @@ def player_numbers(team)
   return array
 end
 
+def player_numbers(team)
+  game_hash.each do |location, data|
+    if team == :team_name
+      return (team_hash[:players].collect do |player, player_hash|
+        player_hash[:name]
+      end)
+    end
+  end
+end
+
+
 def player_stats(player)
   game_hash.each do |location, data| #location level
     data.each do |attribute, values| #team level
