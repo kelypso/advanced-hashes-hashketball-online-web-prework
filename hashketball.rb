@@ -221,6 +221,16 @@ def player_stats(player)
   end
 end
 
+def player_stats(name)
+  game_hash.each do |location, data|
+    data[:players].each do |name, value|
+        if name == name
+        return value.to_i
+      end
+    end
+  end
+end
+
 def big_shoe_rebounds
   game_hash.each do |location, data| #location
     data.each do |attribute, values| #team
