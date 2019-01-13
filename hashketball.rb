@@ -191,15 +191,34 @@ def player_numbers(team)
 end
 =end
 
-
-def player_stats(name)
+def player_numbers(name)
+  array = []
    game_hash.each do |location, team_data|
-      team_data[:players].each do |player_name, value|
-         if player_name == name
-            return value
-         end
+    if team_data[:team_name] == name
+      team_data[:players].each |player_name, value|
+        array << value[:number]
       end
-   end
+    end
+  end
+  array
+end
+
+def player_stats(player)
+  game_hash.each do |location, data| #location level
+    data.each do |attribute, values| #team level
+      if attribute == :players
+        values.each do |name, data| #player level
+          if name == player
+            data.each do |key, stat| #player stat level
+              #how can I pass each stat, change stat from string to int if necessary, and return hash with only integers?
+          
+            end 
+            return data
+          end
+        end
+      end
+    end
+  end
 end
 
 def big_shoe_rebounds
