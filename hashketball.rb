@@ -225,7 +225,7 @@ def player_stats(name)
   game_hash.each do |location, data|
     data[:players].each do |name, value|
         if name == name
-        return value.to_i
+        return value
       end
     end
   end
