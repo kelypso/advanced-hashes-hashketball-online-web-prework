@@ -191,8 +191,8 @@ end
 =end
 
 def player_numbers(team)
-   game_hash.values.each do |team_info|
-    if team_info.has_value?(team)
+   game_hash.values.each do |team_data|
+    if team_data.has_value?(team)
       return team_info[:players].map { |player| player[:number]}
     end
   end
