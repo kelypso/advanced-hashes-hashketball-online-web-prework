@@ -193,7 +193,7 @@ def player_numbers(team)
   game_hash.each do |location, data|
     if team == :team_name
       return team[:players].collect do |name, data|
-        data[:name]
+        data[:number]
       end
     end
   end
