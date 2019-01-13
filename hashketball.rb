@@ -191,21 +191,22 @@ def player_numbers(team)
 end
 =end
 
-def player_numbers(team)
-  array = []
-  game_hash.each do |location, data|
-    if data[:team_name] == team
-      data[:players].each do |name|
-        name.each do |key, value|
+def player_numbers (team_name)
+  player_numbers_list = []
+  game_hash.each do |team, team_details_hash|
+    if team_details_hash[:name] == team_name
+      team_details_hash[:players].each do |player|
+        player.each do |key, value|
           if key == :number 
-            array << value
+            player_numbers_list << value
           end
         end
       end
     end
   end
-  array
+  player_numbers_list
 end
+
 
 
 def player_stats(player)
